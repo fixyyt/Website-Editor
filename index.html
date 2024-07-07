@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Editor</title>
+    <!-- Codemirror styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/theme/eclipse.min.css">
+    <!-- Codemirror scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/addon/edit/closetag.min.js"></script>
+    <!-- JSZip library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="file-manager">
+            <h2>Files</h2>
+            <ul id="file-list"></ul>
+            <button id="add-file-button">Add File</button>
+            <label for="file-upload">Upload Files:</label><br>
+            <input type="file" id="file-upload" multiple>
+            <button id="upload-file-button">Upload</button>
+            <button id="export-project-button">Export Project</button>
+            <label for="import-project">Import Project:</label><br>
+            <input type="file" id="import-project" webkitdirectory multiple>
+        </div>
+        <div class="editor-container">
+            <div class="controls">
+                <label for="theme-selector">Select Theme: </label>
+                <select id="theme-selector">
+                    <option value="default">Default</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="monokai">Monokai</option>
+                    <option value="eclipse">Eclipse</option>
+                </select>
+            </div>
+            <div class="editor">
+                <h2>Code Editor</h2>
+                <textarea id="code-editor"></textarea>
+            </div>
+        </div>
+        <div class="preview">
+            <h2>Live Preview</h2>
+            <iframe id="preview-frame"></iframe>
+        </div>
+    </div>
+    <script src="editor.js"></script>
+    <script src="preview.js"></script>
+</body>
+</html>
+
+
+<!--
+ _______  __  ___   ___ ____    ____ 
+|   ____||  | \  \ /  / \   \  /   / 
+|  |__   |  |  \  V  /   \   \/   /  
+|   __|  |  |   >   <     \_    _/   
+|  |     |  |  /  .  \      |  |     
+|__|     |__| /__/ \__\     |__|     
+                                     
+-->
